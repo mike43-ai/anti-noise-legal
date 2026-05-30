@@ -6,7 +6,7 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** May 19, 2026
-**Last updated:** May 19, 2026
+**Last updated:** May 30, 2026
 
 Anti Noise ("we", "us", "our") operates the Anti Noise iOS application (the "App"). This Privacy Policy explains what information we collect, how we use it, and the choices you have. By using the App you agree to this policy.
 
@@ -24,16 +24,20 @@ The App captures content you choose to save:
 - AI-generated summaries and flashcards derived from your captures
 - Focus session timestamps and durations
 - Tags, categories, and personal notes attached to captures
+- A daily list of curated learning topics with AI-written explainers ("Daily Knowledge"), generated for you from a fixed in-app catalogue
 
 This content is stored locally on your device (SwiftData) and mirrored to our cloud database (Cloud Firestore) when you are signed in, so you can access it across your devices.
 
-### 1.3 Subscription information
+### 1.3 Learning preferences
+To personalize your Daily Knowledge picks, the App stores the topic packs you choose and, optionally, your role, experience level, and learning goal. These are saved to your account profile and used only to select which learning topics you are shown. You can change or clear them at any time in Profile → Improve your feed.
+
+### 1.4 Subscription information
 When you purchase a subscription, the App receives a receipt from Apple confirming entitlement. We do not receive your payment method, billing address, or full Apple ID. Apple charges you directly; we only see whether your subscription is active.
 
-### 1.4 Diagnostic information
+### 1.5 Diagnostic information
 We collect anonymous app usage events (screens viewed, features used, capture counts, subscription events) and crash reports to improve the App. Diagnostic data is associated with a random installation identifier, not with your real identity.
 
-### 1.5 Information you do not provide
+### 1.6 Information you do not provide
 The App does not ask for your phone number, location, contacts, calendars, or health data.
 
 ## 2. How We Use Your Information
@@ -42,18 +46,18 @@ We use the information we collect to:
 - Provide the core capture, summarize, and learning features
 - Sync your content across your devices
 - Generate AI summaries and flashcards from your captures
-- Enforce free-tier quotas (3 captures per day, 5 AI summaries per month) and unlock unlimited usage for Pro subscribers
+- Enforce free-tier quotas (3 captures per day, 10 AI summaries per month, and daily learning picks) and unlock unlimited usage for Pro subscribers
 - Send local notifications (review reminders for spaced-repetition flashcards) — these notifications are scheduled on your device and do not require us to send data through external servers
 - Diagnose crashes and improve performance
 - Communicate with you about service changes or support requests when you contact us
 
 We do not use your content to train AI models. We do not sell your information to advertisers or data brokers.
 
-## 3. AI Processing (OpenAI)
+## 3. AI Processing
 
-The App uses OpenAI's GPT-4o to generate Feynman-style summaries and flashcards. When you request a summary, the text content of the capture is sent to OpenAI's API. OpenAI's data handling is governed by OpenAI's own privacy policy: https://openai.com/policies/privacy-policy.
+The App uses AI to generate Feynman-style summaries, flashcards, and Daily Knowledge explainers. AI processing happens **server-side**: when you request AI output, the relevant content is sent to our own gateway (running on Cloudflare Workers), which authenticates the request with your account identifier and forwards the content to our AI provider (OpenRouter and the underlying model) using a key that we operate. **You do not provide or manage any API key.**
 
-In the current version, AI calls are made using an API key that you provide and that is stored only in your device Keychain. We do not retain or relay your captures through our servers in this configuration. A future update will route AI calls through our backend; this policy will be updated when that change ships.
+We do not retain the content of your captures on the gateway beyond the time needed to process the request, and we do not use your content to train AI models. Per our AI provider's API policy, API inputs are not used to train models by default. Only the resulting summaries, flashcards, and Daily Knowledge items are stored in your account as described in Section 1. Our AI provider's data handling is governed by its own privacy policy: https://openrouter.ai/privacy.
 
 ## 4. Third-Party Services
 
@@ -66,7 +70,8 @@ We rely on the following third-party services to operate the App. Each receives 
 | Google Cloud Firestore | Cloud database | Your captures, summaries, flashcards, account profile |
 | Google Firebase Analytics | Anonymous usage analytics | Installation ID, event names, screen names |
 | Google Firebase Crashlytics | Crash reporting | Crash stack traces, device model, OS version |
-| OpenAI | AI summary + flashcard generation | Capture text content (only when you trigger a summary or flashcard) |
+| Anti Noise API (Cloudflare Workers) | Server-side AI gateway | Capture content you submit for AI processing, plus your account identifier |
+| OpenRouter (and the underlying AI model provider) | AI summary, flashcard, and Daily Knowledge generation | Capture content relayed by our gateway (only when you trigger AI output) |
 | RevenueCat | Subscription management | App User ID (random or your Firebase UID), purchase receipts |
 
 Each provider stores data on their own infrastructure under their respective privacy policies. We do not control how these providers process data within their platforms.
@@ -99,14 +104,14 @@ Anti Noise is not directed at children under 13 (or the equivalent minimum age i
 We use industry-standard measures to protect your information:
 - TLS for all data in transit
 - Encrypted storage on Apple and Google managed infrastructure
-- API keys stored in the iOS Keychain on your device
+- A server-side AI gateway that authenticates every request with your account identity, so AI provider keys are never embedded in the App
 - Access to production data restricted to the operator of Anti Noise
 
 No system is perfectly secure. If you believe your account has been compromised, contact us immediately.
 
 ## 9. International Transfers
 
-We are based in Vietnam. Your information may be processed in the United States or other countries where our service providers operate. By using the App, you consent to such transfers. Where required by law (e.g. GDPR), we rely on standard contractual clauses or equivalent safeguards offered by our providers.
+We are based in Vietnam. Your information may be processed in the United States or other countries where our service providers operate (including Google, Cloudflare, OpenRouter, and RevenueCat). By using the App, you consent to such transfers. Where required by law (e.g. GDPR), we rely on standard contractual clauses or equivalent safeguards offered by our providers.
 
 ## 10. Changes to This Policy
 
