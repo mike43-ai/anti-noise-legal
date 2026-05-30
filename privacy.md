@@ -6,14 +6,14 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** May 19, 2026
-**Last updated:** May 30, 2026
+**Last updated:** May 31, 2026
 
 Anti Noise ("we", "us", "our") operates the Anti Noise iOS application (the "App"). This Privacy Policy explains what information we collect, how we use it, and the choices you have. By using the App you agree to this policy.
 
 ## 1. Information We Collect
 
 ### 1.1 Account information
-When you sign up with email + password or Sign in with Apple, we collect:
+When you sign in with Google or Apple (or with email + password for existing accounts), we collect:
 - Email address
 - Display name (optional, you may provide it)
 - Account identifier issued by our authentication provider
@@ -66,6 +66,7 @@ We rely on the following third-party services to operate the App. Each receives 
 | Service | Purpose | Data received |
 |---|---|---|
 | Apple — Sign in with Apple, App Store | Authentication, in-app purchases | Email (relay or real), purchase receipt |
+| Google — Sign in with Google | Authentication | Email, name, Google account identifier |
 | Google Firebase — Authentication | Account sign-in | Email, display name |
 | Google Cloud Firestore | Cloud database | Your captures, summaries, flashcards, account profile |
 | Google Firebase Analytics | Anonymous usage analytics | Installation ID, event names, screen names |
