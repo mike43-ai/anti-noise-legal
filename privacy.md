@@ -6,9 +6,9 @@ permalink: /privacy/
 # Privacy Policy
 
 **Effective date:** May 19, 2026
-**Last updated:** May 31, 2026
+**Last updated:** June 14, 2026
 
-Anti Noise ("we", "us", "our") operates the Anti Noise iOS application (the "App"). This Privacy Policy explains what information we collect, how we use it, and the choices you have. By using the App you agree to this policy.
+Anti Noise ("we", "us", "our") operates the Anti Noise iOS and Android applications (the "App"). This Privacy Policy explains what information we collect, how we use it, and the choices you have. By using the App you agree to this policy.
 
 ## 1. Information We Collect
 
@@ -20,19 +20,19 @@ When you sign in with Google or Apple (or with email + password for existing acc
 
 ### 1.2 Content you create
 The App captures content you choose to save:
-- URLs, text notes, and images you submit through the Capture flow or iOS Share Sheet
+- URLs, text notes, and images you submit through the Capture flow or the system share sheet
 - AI-generated summaries and flashcards derived from your captures
 - Focus session timestamps and durations
 - Tags, categories, and personal notes attached to captures
 - A daily list of curated learning topics with AI-written explainers ("Daily Knowledge"), generated for you from a fixed in-app catalogue
 
-This content is stored locally on your device (SwiftData) and mirrored to our cloud database (Cloud Firestore) when you are signed in, so you can access it across your devices.
+This content is stored locally on your device and, where the feature is available, synced to our cloud database (Cloud Firestore) when you are signed in so you can access it across your devices.
 
 ### 1.3 Learning preferences
 To personalize your Daily Knowledge picks, the App stores the topic packs you choose and, optionally, your role, experience level, and learning goal. These are saved to your account profile and used only to select which learning topics you are shown. You can change or clear them at any time in Profile → Improve your feed.
 
 ### 1.4 Subscription information
-When you purchase a subscription, the App receives a receipt from Apple confirming entitlement. We do not receive your payment method, billing address, or full Apple ID. Apple charges you directly; we only see whether your subscription is active.
+The Android app is currently free and offers no in-app purchases. On iOS, when you purchase a subscription the App receives a receipt from Apple confirming entitlement. We do not receive your payment method, billing address, or full Apple ID. Apple charges you directly; we only see whether your subscription is active.
 
 ### 1.5 Diagnostic information
 We collect anonymous app usage events (screens viewed, features used, capture counts, subscription events) and crash reports to improve the App. Diagnostic data is associated with a random installation identifier, not with your real identity.
